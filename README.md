@@ -29,12 +29,14 @@ Resulting documentation can be viewed here:
 - It does not generates `index.html` and if you intend to publish docs on GitHub,
   you have to write additional wrapper to rename it.
 
+
+## Real projects using CL-API
+
+- [colorize](http://redlinernotes.com/docs/colorize.html)
+
+
 ## Conclusion
 
 Suitable for building a reference for third-party libraries if they don't have
 own documentation. But lack of ability to process handwritten chapters and work
 with package inferred systems, make it unusable for 40ants projects.
-
-### Real projects using CL-API
-
-- [colorize](http://redlinernotes.com/docs/colorize.html)
