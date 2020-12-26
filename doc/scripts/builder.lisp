@@ -1,7 +1,8 @@
 (defpackage #:example-doc/builder
   (:use #:cl)
   (:import-from #:cl-api)
-  (:import-from #:example))
+  (:import-from #:example)
+  (:export #:build))
 (in-package example-doc/builder)
 
 
