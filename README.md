@@ -34,3 +34,7 @@ Resulting documentation can be viewed here:
 Suitable for building a reference for third-party libraries if they don't have
 own documentation. But lack of ability to process handwritten chapters and work
 with package inferred systems, make it unusable for 40ants projects.
+
+### Real projects using CL-API
+
+- [colorize](http://redlinernotes.com/docs/colorize.html)
