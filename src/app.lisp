@@ -2,8 +2,8 @@
 
 
 (defmacro defrule (name &body body)
-  "This is a fake macro just to demonstrate how eazy-documentation
-will extract docstrings from it's forms."
+  "This is a fake macro just to see if documentation
+extractor is able to extract docs from custom forms."
   `(defparameter ,name '(,@(rest body))))
 
 
