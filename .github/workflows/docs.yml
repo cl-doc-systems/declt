@@ -22,8 +22,7 @@ jobs:
         run: |
           curl -L https://raw.githubusercontent.com/roswell/roswell/master/scripts/install-for-ci.sh | sh
           echo /home/runner/.roswell/bin >> $GITHUB_PATH
-      # Eazy Documentation is able to process
-      # package inferred systems only on ASDF >= 3.3.4
+      # Package inferred systems work better on ASDF >= 3.3.4
       # That is why we need to upgrade it.
       - name: Install newer ASDF
         run: ros install asdf
@@ -34,17 +33,7 @@ jobs:
       - name: Install Qlot
         run: ros install qlot
       - name: Install Dependencies
-        run: |
-          sudo apt-get install pandoc texi2html
-          qlot install
-      - name: Install Eazy Documentation fork
-        # Because my patches aren't in the upstream yet:
-        # https://github.com/guicho271828/eazy-documentation/pull/2
-        run: |
-          git clone git://github.com/svetlyak40wt/eazy-documentation.git .qlot/local-projects/eazy-documentation/
-          cd .qlot/local-projects/eazy-documentation/
-          git checkout replace-ignore-errors
-          cd ../../../
+        run: qlot install
       # - name: Start SSH session
       #   uses: luchihoratiu/debug-via-ssh@main
       #   with:
