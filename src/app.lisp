@@ -26,4 +26,4 @@ to do the real job.
 
 CL-API does not support any markup and you can
 put links into the docstrings."
-  (example/utils:do-the-job first other))
+  (example:do-the-job first other))
