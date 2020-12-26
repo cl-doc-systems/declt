@@ -1,12 +1,4 @@
-(defpackage #:example/class
-  (:use #:cl)
-  (:export
-   #:name
-   #:user
-   #:last-login-at
-   #:email
-   #:admin))
-(in-package example/class)
+(in-package example)
 
 
 (defclass user ()

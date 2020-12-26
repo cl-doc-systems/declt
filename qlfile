@@ -1,1 +1,9 @@
+# cl-api was excluded from Quicklisp in 2014 because it is SBCL only
+# https://github.com/quicklisp/quicklisp-projects/commit/e8c65442bbbfdfc0019f73513c8b15a04d134a4c
+
+# But it is available from Ultralisp
 dist ultralisp http://dist.ultralisp.org/
+
+# If you want to turnn off Ultralisp,
+# uncomment this line:
+# github cl-api kiuma/CL-API

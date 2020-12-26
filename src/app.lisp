@@ -1,22 +1,9 @@
-(defpackage #:example/app
-  (:use #:cl)
-  (:import-from #:example/utils)
-  (:import-from #:example/class)
-  (:documentation "This is docstring for the package.
-
-                   The package contains a function which does it's job by
-                   applying transformation to the first and second arguments.
-
-                   CLDomain is not support these docstrings yet.")
-  (:export #:foo
-           #:defrule
-           #:number-one))
-(in-package example/app)
+(in-package example)
 
 
 (defmacro defrule (name &body body)
   "This is a fake macro just to demonstrate how eazy-documentation
-   will extract docstrings from it's forms."
+will extract docstrings from it's forms."
   `(defparameter ,name '(,@(rest body))))
 
 
@@ -34,9 +21,9 @@ After macro-expansion it will be just:
 (defun foo (first &key (other 100500))
   "This is example function.
 
-   Internally it calls [DO-THE-JOB](#EXAMPLE/UTILS:DO-THE-JOB)
-   to do the real job.
+Internally it calls EXAMPLE:DO-THE-JOB)
+to do the real job.
 
-   Note, I'm using Markdown in this doctring. This is default
-   and docstrings markup can be changed by a parameter."
+CL-API does not support any markup and you can
+put links into the docstrings."
   (example/utils:do-the-job first other))

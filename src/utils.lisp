@@ -1,8 +1,4 @@
-(defpackage #:example/utils
-  (:use #:cl)
-  (:export #:do-the-job)
-  (:documentation "The utils"))
-(in-package example/utils)
+(in-package example)
 
 
 (defun concat (first second)
@@ -13,17 +9,11 @@
 (defun do-the-job (first second)
   "The function does the job.
 
-   It **concatenates** first and second arguments
-   calling internal function concat.
+It *concatenates* first and second arguments
+calling internal function concat.
 
-   On this multiline we'll check how does documentation
-   system processes docstrings.
-
-   By the way, pay attention at the second paragraph where
-   I've used [Markdown](https://www.markdownguide.org/basic-syntax/)
-   format to make the word \"concatenates\" bold.
-
-   Also, we can reference some parts of the documentation.
-   Read more about cross referencing in the
-   [Handwritten documentation](#handwritten-documentation) chapter."
+On this multiline we'll check how does documentation
+system processes docstrings. It does not deindent
+subsequent lines and I have to shift them to the left
+in the code."
   (concat first second))
