@@ -36,12 +36,12 @@ jobs:
         run: qlot install
       - name: Install Package Dependencies
         run: apt-get install texlive-latex-base
-      - name: Start SSH session
-        uses: luchihoratiu/debug-via-ssh@main
-        with:
-          NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
-          SSH_PASS: ${{ secrets.SSH_PASS }}
-          NGROK_REGION: eu
+      # - name: Start SSH session
+      #   uses: luchihoratiu/debug-via-ssh@main
+      #   with:
+      #     NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+      #     SSH_PASS: ${{ secrets.SSH_PASS }}
+      #     NGROK_REGION: eu
           
       - name: Build docs
         run: qlot exec docs/scripts/build.ros
