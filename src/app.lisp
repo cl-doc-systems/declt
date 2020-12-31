@@ -26,5 +26,6 @@
    to do the real job.
 
    Note, that the link above is broken, but Coo does not warn us when building the docs.
-   Sphinx issues a warning inn such case."
+   Sphinx issues a warning inn such case.
+"
   (example/utils:do-the-job first other))
