@@ -1,4 +1,14 @@
-(in-package example)
+(defpackage #:example/utils
+  (:use #:cl)
+  (:export #:do-the-job)
+  (:documentation "The utils package.
+
+This package's docstring is not mention any functions via @code{aboutfun} or @code{aboutclass} tags.
+
+Hence, the only exported function @fun{do-the-job} will be show in a separate
+section \"Other functions in example/utils\".
+"))
+(in-package example/utils)
 
 
 (defun concat (first second)
@@ -9,11 +19,9 @@
 (defun do-the-job (first second)
   "The function does the job.
 
-It *concatenates* first and second arguments
+It @v{concatenates} first and second arguments
 calling internal function concat.
 
 On this multiline we'll check how does documentation
-system processes docstrings. It does not deindent
-subsequent lines and I have to shift them to the left
-in the code."
+system processes docstrings."
   (concat first second))

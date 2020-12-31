@@ -1,29 +1,30 @@
-(in-package example)
+(defpackage #:example/app
+  (:use #:cl)
+  (:import-from #:example/utils)
+  (:import-from #:example/class)
+  (:documentation "This is docstring for the @b{example/app} package.
 
+                   The package contains a function which does it's job by
+                   applying transformation to the first and second arguments:
 
-(defmacro defrule (name &body body)
-  "This is a fake macro just to see if documentation
-extractor is able to extract docs from custom forms."
-  `(defparameter ,name '(,@(rest body))))
+                   @aboutfun{foo}
 
-
-(defrule number-one
-    "This is a rule's docstring. Nothing special, just a text.
-
-After macro-expansion it will be just:
-
-    (defparameter number-one '((a b c)))
-
-"
-  (a b c))
+                   When you mention a function like that, it is included into
+                   the package description and removed from the
+                   \"Other functions...\" section")
+  (:export #:foo))
+(in-package example/app)
 
 
 (defun foo (first &key (other 100500))
-  "This is example function.
+  "@short{This is example function.}
+   @arg[first]{Just a first argument.}
+   @arg[other]{Optional keyword argument. Default is 100500.}
+   @return{A string with first and other concatenated.}
 
-Internally it calls EXAMPLE:DO-THE-JOB)
-to do the real job.
+   Internally it calls @fun{example/utils:do-the-job}
+   to do the real job.
 
-CL-API does not support any markup and you can
-put links into the docstrings."
-  (example:do-the-job first other))
+   Note, that the link above is broken, but Coo does not warn us when building the docs.
+   Sphinx issues a warning inn such case."
+  (example/utils:do-the-job first other))

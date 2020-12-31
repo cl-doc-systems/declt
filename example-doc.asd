@@ -1,4 +1,4 @@
 (defsystem "example-doc"
   :class :package-inferred-system
-  :pathname "doc/scripts/"
+  :pathname "docs/scripts/"
   :depends-on ("example-doc/builder"))
