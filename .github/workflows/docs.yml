@@ -42,7 +42,7 @@ jobs:
       #     NGROK_REGION: eu
           
       - name: Build docs
-        run: qlot exec doc/scripts/build.ros
+        run: qlot exec docs/scripts/build.ros
         env:
           # This token is automaticaly added to the secrets
           # by GitHub. Read more here:
