@@ -32,8 +32,10 @@ jobs:
           cl-info
       - name: Install Qlot
         run: ros install qlot
-      - name: Install Dependencies
+      - name: Install Lisp Dependencies
         run: qlot install
+      - name: Install Package Dependencies
+        run: apt-get install texlive-latex-base
       - name: Start SSH session
         uses: luchihoratiu/debug-via-ssh@main
         with:
