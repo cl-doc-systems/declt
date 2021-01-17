@@ -1,6 +1,6 @@
-# ATDOC
+# Declt
 
-This is an example project of [ATDOC](http://www.lichteblau.com/atdoc/doc/) Common Lisp documentation system.
+This is an example project of [Declt](https://www.lrde.epita.fr/~didier/software/lisp/declt/user/index.html) Common Lisp documentation system.
 
 This repository is part of the <https://github.com/cl-doc-systems> organization, created to compare different Common Lisp documentation systems
 
@@ -8,38 +8,43 @@ The goal is make it easier for CL software developers to choose proper documenta
 
 Resulting documentation can be viewed here:
 
-<https://cl-doc-systems.github.io/atdoc/> ([PDF version](https://cl-doc-systems.github.io/atdoc/latex/documentation.pdf) is very nice!)
+<https://cl-doc-systems.github.io/declt/> ([PDF version](https://cl-doc-systems.github.io/declt/index.pdf) is very nice!)
 
-## Pros
+Pros
+====
 
-- ATDOC uses a custom markup language which allows to do a few interesting things.
-- There are special tags to help reference functions and classes.
-- There is a special markup for function arguments and return value. When it is
-  used, these arguments are extracted into a separate subsection.
-- There is a special tags to include class or function description into the other
-  docstring. This way, you can write a long package description and put
-  all classes and functions in the proper order.
-- Docs can be generated for any CL package from any system.
-- Generates documentation in HTML, PDF and Info formats.
-- You can change CSS to tune the page a little bit.
+- Generates manuals in Texinfo which can be converted to `HTML`, `PDF`, `DVI`
+  and `PostScript`. Here is [PDF version](https://cl-doc-systems.github.io/declt/index.pdf) of this site.
+- Automatically embeds license information.
+- Uses standard [Texinfo format](https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html),
+  which has good documentation. Theoretically, Texinfo should well suite for large documents.
+- It is able to generate single or multi page `HTML` output. To switch the mode, change
+  `single-page-p` variable in `docs/scripts/builder.lisp`.
 
-## Cons
+Cons
+====
 
-- You have to learn a custom markup language.
-- Does not play well with package inferred systems when using a multi-page HTML mode.
-- Rendered HTML has strange indentation and package names aren't headers.
-- There is no way to change HTML layout, but if you'll want to hack it, then
-  you'll have to dive into this XSLT templates hell.
-- It is hard to write long, tutorial like documentation, because separate documentation
-  files are not supported.
+- Works only under `SBCL`.
+- Free form documentation chapters are limited by "Introduction" and "Conclusion".
+- Texinfo is not so popular these days. Also, it is very verbose.
+- There is no default CSS theme.
+- I wasn't able to use cross referencing Texinfo tags from
+  docstrings. Seems Texinfo markup does not work there. But it works
+  in the introduction and conclusion.
 
-## Real projects using ATDOC
 
-- [trivial-garbage](https://github.com/trivial-garbage/trivial-garbage) ([rendered docs](https://common-lisp.net/project/trivial-garbage/))
+## Real projects using Declt
+
+- [Quickref](https://gitlab.common-lisp.net/quickref/quickref) ([rendered docs](https://quickref.common-lisp.net/))
 
 
 ## Conclusion
 
-Suitable for building a reference for small libraries.
-But lack of ability to process handwritten chapters not bound to the packages and problems
-with package inferred systems, make it unusable for 40ants projects.
+Declt can be used be used when you need to generate API reference for third-party libraries
+as [Quickref](https://quickref.common-lisp.net/) does for all Quicklisp libraries.
+
+Ability to generate docs in different formats also might be interesting.
+
+But the lack of markup support for docstrings and cross-reference helpers along with limited ability
+to create free form documentation chapters makes Declt useless for documenting
+[40Ants](https://40ants.com) projects.

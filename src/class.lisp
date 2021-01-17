@@ -1,18 +1,12 @@
 (defpackage #:example/class
   (:use #:cl)
-  (:documentation "This package demonstrates how ATDOC displays classes and generic functions.
+  (:documentation "This package demonstrates how Declt displays classes and generic functions.
 
-                   The key consept is user class:
+                   The key consept is USER class
 
-                   USER
+                   It is possible to check if user has admin privileges, using this IS-ADMIN function.
 
-                   It is possible to check if user has admin privileges, using this function:
-
-                   IS-ADMIN
-
-                   Right now, `IS-ADMIN' returns `t' only for objects of class `ADMIN':
-
-                   ADMIN
+                   Right now, IS-ADMIN returns T only for objects of class ADMIN.
 ")
   (:export #:foo
            #:user
@@ -34,8 +28,6 @@
   (:documentation "All users in the system have this class.
 
 Last login slot is updated automatically.
-
-NOTE: \"Documented Subclasses\" section contains only classes which are:
 "))
 
 
@@ -45,19 +37,17 @@ NOTE: \"Documented Subclasses\" section contains only classes which are:
 
 
 ;; This class will be show in the documentation
-;; and in the user's "Documented Subclasses", because it is exported.
-;; But there will be a red note about missing documentation string.
+;; and in the USER's "Direct subclasses", but it has no any docstring.
 (defclass non-documented-user (user)
   ())
 
 
 (defclass inner-documented-user (user)
   ()
-  (:documentation "This class only to demostrate how ATDOC's docstring
-collection ignores not exported classes even when they have documentation.
+  (:documentation "This class only to demostrate how Declt's separates exported
+symbols from internal.
 
-Also, it will not be shown in the \"Documented Subclasses\".
-Seems, \"documented\" in terms of ATDOC is \"exported\" and being the public API."))
+It will not be shown in the separate section \"Internal Definitions\"."))
 
 
 

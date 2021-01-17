@@ -17,8 +17,6 @@
                     (asdf:system-license
                      (asdf:find-system system-name)))
                    "KEYWORD"))
-         ;; atdoc fails if pathname is relative.
-         ;; that is why we need to make it absolute:
          (build-dir (merge-pathnames #P"docs/build/"))
          (html-dir (merge-pathnames #P"docs/build/html/"))
          (single-page-p t)
