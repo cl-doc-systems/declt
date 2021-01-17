@@ -12,11 +12,11 @@
 
 (defun build ()
   (let* ((system-name :example)
-         (license (intern
-                   (string-upcase
-                    (asdf:system-license
-                     (asdf:find-system system-name)))
-                   "KEYWORD"))
+         ;; (license (intern
+         ;;           (string-upcase
+         ;;            (asdf:system-license
+         ;;             (asdf:find-system system-name)))
+         ;;           "KEYWORD"))
          (build-dir (merge-pathnames #P"docs/build/"))
          (html-dir (merge-pathnames #P"docs/build/html/"))
          (single-page-p t)
@@ -45,7 +45,7 @@
       
       (declt system-name
              :tagline "An example of Declt documentation system."
-             :license license
+             ;; :license license
              :texi-directory texi-dir
              :texi-name "index"
              :introduction intro
