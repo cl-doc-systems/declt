@@ -4,15 +4,15 @@
 
                    The key consept is user class:
 
-                   @aboutclass{user}
+                   USER
 
                    It is possible to check if user has admin privileges, using this function:
 
-                   @aboutfun{is-admin}
+                   IS-ADMIN
 
-                   Right now, @fun{is-admin} returns @code{t} only for objects of @class{admin}:
+                   Right now, `IS-ADMIN' returns `t' only for objects of class `ADMIN':
 
-                   @aboutclass{admin}
+                   ADMIN
 ")
   (:export #:foo
            #:user
@@ -35,7 +35,7 @@
 
 Last login slot is updated automatically.
 
-@b{NOTE:} \"Documented Subclasses\" section contains only classes which are:
+NOTE: \"Documented Subclasses\" section contains only classes which are:
 "))
 
 

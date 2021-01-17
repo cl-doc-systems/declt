@@ -3,10 +3,8 @@
   (:export #:do-the-job)
   (:documentation "The utils package.
 
-This package's docstring is not mention any functions via @code{aboutfun} or @code{aboutclass} tags.
-
-Hence, the only exported function @fun{do-the-job} will be show in a separate
-section \"Other functions in example/utils\".
+The only exported function DO-THE-JOB will be show in a separate
+section \"Exported Definitions\".
 "))
 (in-package example/utils)
 
@@ -19,9 +17,13 @@ section \"Other functions in example/utils\".
 (defun do-the-job (first second)
   "The function does the job.
 
-It @v{concatenates} first and second arguments
+It CONCATENATES first and second arguments
 calling internal function concat.
 
 On this multiline we'll check how does documentation
-system processes docstrings."
+system processes docstrings.
+
+NOTE: pay attention the Texinfo markup in the second paragraph
+does not supported in docstrings and I was not able to make
+CONCATENATES word bold :(" 
   (concat first second))

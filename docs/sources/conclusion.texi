@@ -1,0 +1,8 @@
+@t{Declt} can be used be used when you need to generate API reference for third-party libraries
+as @url{https://quickref.common-lisp.net/, Quickref} does for all Quicklisp libraries.
+
+Ability to generate docs in different formats also might be interesting.
+
+But the lack of markup support for docstrings and cross-reference helpers along with limited ability
+to create free form documentation chapters makes @t{Declt} useless for documenting
+@url{https://40ants.com, 40Ants projects}.

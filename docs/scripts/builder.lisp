@@ -1,50 +1,76 @@
-(defpackage #:example-doc/builder
+(defpackage #:docs
   (:use #:cl)
-  (:import-from #:atdoc)
+  (:import-from #:net.didierverna.declt
+                #:declt)
+  ;; To make sure documentation builder will
+  ;; find all definitions, we need to import them.
   (:import-from #:example/app)
+  (:import-from #:example/class)
   (:export #:build))
-(in-package example-doc/builder)
+(in-package docs)
 
 
 (defun build ()
-  (let ((title "ATDOC example project")
-        (packages '(:example/app
-                    :example/class
-                    :example/utils))
-        ;; atdoc fails if pathname is relative.
-        ;; that is why we need to make it absolute:
-        (html-dir (merge-pathnames #P"docs/build/"))
-        (latex-dir (merge-pathnames #P"docs/build/latex/"))
-        (info-dir (merge-pathnames #P"docs/build/info/"))
-        ;; To make class documentation more verbose
-        (include-slot-definitions-p t)
-        ;; To see which commands are executed under the hood.
-        ;; This can be useful for debugging.
-        (asdf:*verbose-out* t))
-    (ensure-directories-exist latex-dir)
-    (ensure-directories-exist info-dir)
-    
-    (atdoc:generate-html-documentation packages
-                                       html-dir
-                                       ;; By default, multipage documentation is generated
-                                       ;; and because of backslashes in package inferred names
-                                       ;; CSS is not loaded propertly on pages other than index.html.
-                                       ;; 
-                                       ;; That is why I've switched to the single page:
-                                       :single-page-p t
-                                       :include-slot-definitions-p include-slot-definitions-p
-                                       :index-title title
-                                       :heading title)
-    (atdoc:generate-info-documentation packages
-                                       info-dir 
-                                       :name "example"
-                                       :title title
-                                       :include-slot-definitions-p include-slot-definitions-p)
-    (atdoc:generate-latex-documentation packages
-                                        latex-dir
-                                        :title title
-                                        :include-slot-definitions-p include-slot-definitions-p)
+  (let* ((system-name :example)
+         (license (intern
+                   (string-upcase
+                    (asdf:system-license
+                     (asdf:find-system system-name)))
+                   "KEYWORD"))
+         ;; atdoc fails if pathname is relative.
+         ;; that is why we need to make it absolute:
+         (build-dir (merge-pathnames #P"docs/build/"))
+         (html-dir (merge-pathnames #P"docs/build/html/"))
+         (single-page-p t)
+         (texi-dir (merge-pathnames #P"docs/build/texi/"))
+         (tmp-dir (merge-pathnames #P"docs/build/tmp/"))
+         (sources-dir (merge-pathnames #P"docs/sources/"))
+         (intro-path (merge-pathnames #P"intro.texi"
+                                      sources-dir))
+         (intro (when (probe-file intro-path)
+                  (uiop:read-file-string intro-path)))
+         (conclusion-path (merge-pathnames #P"conclusion.texi"
+                                           sources-dir))
+         (conclusion (when (probe-file conclusion-path)
+                       (uiop:read-file-string conclusion-path))))
 
-    (uiop:with-output-file (s (merge-pathnames ".nojekyll" html-dir)
-                              :if-exists :overwrite)
-      (declare (ignorable s)))))
+    (flet ((rm (dir)
+             (uiop:delete-directory-tree dir :validate t :if-does-not-exist :ignore))
+           (run (cmd)
+             (uiop:run-program cmd
+                          :output nil   ;; We only want to see errors
+                          :error-output t)))
+
+      (rm build-dir)
+      (ensure-directories-exist html-dir)
+      (ensure-directories-exist texi-dir)
+      
+      (declt system-name
+             :tagline "An example of Declt documentation system."
+             :license license
+             :texi-directory texi-dir
+             :texi-name "index"
+             :introduction intro
+             :conclusion conclusion
+             :hyperlinks t)
+
+      ;; Build PDF
+      (ensure-directories-exist tmp-dir)
+      (uiop:with-current-directory (tmp-dir)
+        (run "texi2pdf ../texi/index.texi"))
+      ;; We are moving PDF version to HTML dir to make it available on GitHub pages site
+      (run (format nil "mv ~A/index.pdf ~A"
+                   tmp-dir
+                   html-dir))
+      (rm tmp-dir)
+      (run (format nil
+                   (if single-page-p
+                       "makeinfo --force --no-split --html -o ~A/index.html ~Aindex.texi"
+                       "makeinfo --force --html -o ~A/ ~Aindex.texi")
+                   html-dir
+                   texi-dir))
+    
+      (uiop:with-output-file (s (merge-pathnames ".nojekyll" html-dir)
+                                :if-exists :overwrite)
+        (declare (ignorable s))))
+    (values)))
