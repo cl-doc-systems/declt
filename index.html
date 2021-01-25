@@ -1,0 +1,1460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright (C) 2021 Alexander Artemenko
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+section entitled "Copying" is included exactly as in the original.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be translated as well. -->
+<!-- Created by GNU Texinfo 6.5, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>The example Reference Manual</title>
+
+<meta name="description" content="The example Reference Manual.">
+<meta name="keywords" content="The example Reference Manual">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="#Top" rel="start" title="Top">
+<link href="#Indexes" rel="index" title="Indexes">
+<link href="#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="dir.html#Top" rel="up" title="(dir)">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+blockquote.smallindentedblock {margin-right: 0em; font-size: smaller}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: inherit; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: inherit; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<h1 class="settitle" align="center">The example Reference Manual</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="SEC_Contents"></a>
+<h2 class="contents-heading">Table of Contents</h2>
+
+<div class="contents">
+
+<ul class="no-bullet">
+  <li><a name="toc-Copying-1" href="#Copying">Copying</a></li>
+  <li><a name="toc-Introduction-1" href="#Introduction">1 Introduction</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Pros-_0026-Cons" href="#Pros-_0026-Cons">1.1 Pros &amp; Cons</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Pros" href="#Pros">1.1.1 Pros</a></li>
+      <li><a name="toc-Cons" href="#Cons">1.1.2 Cons</a></li>
+    </ul></li>
+  </ul></li>
+  <li><a name="toc-Systems-1" href="#Systems">2 Systems</a>
+  <ul class="no-bullet">
+    <li><a name="toc-example" href="#The-example-system">2.1 <tt>example</tt></a></li>
+    <li><a name="toc-example_002fapp" href="#The-example_002fapp-system">2.2 <tt>example/app</tt></a></li>
+    <li><a name="toc-example_002futils" href="#The-example_002futils-system">2.3 <tt>example/utils</tt></a></li>
+    <li><a name="toc-example_002fclass" href="#The-example_002fclass-system">2.4 <tt>example/class</tt></a></li>
+  </ul></li>
+  <li><a name="toc-Files-1" href="#Files">3 Files</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Lisp" href="#Lisp-files">3.1 Lisp</a>
+    <ul class="no-bullet">
+      <li><a name="toc-example_002easd" href="#The-example_2024asd-file">3.1.1 <tt>example.asd</tt></a></li>
+      <li><a name="toc-example_002fapp_002ffile_002dtype_002elisp" href="#The-example_002fapp_002ffile_002dtype_2024lisp-file">3.1.2 <tt>example/app/file-type.lisp</tt></a></li>
+      <li><a name="toc-example_002futils_002ffile_002dtype_002elisp" href="#The-example_002futils_002ffile_002dtype_2024lisp-file">3.1.3 <tt>example/utils/file-type.lisp</tt></a></li>
+      <li><a name="toc-example_002fclass_002ffile_002dtype_002elisp" href="#The-example_002fclass_002ffile_002dtype_2024lisp-file">3.1.4 <tt>example/class/file-type.lisp</tt></a></li>
+    </ul></li>
+  </ul></li>
+  <li><a name="toc-Packages-1" href="#Packages">4 Packages</a>
+  <ul class="no-bullet">
+    <li><a name="toc-example_002fapp-1" href="#The-example_002fapp-package">4.1 <tt>example/app</tt></a></li>
+    <li><a name="toc-example_002futils-1" href="#The-example_002futils-package">4.2 <tt>example/utils</tt></a></li>
+    <li><a name="toc-example_002fclass-1" href="#The-example_002fclass-package">4.3 <tt>example/class</tt></a></li>
+  </ul></li>
+  <li><a name="toc-Definitions-1" href="#Definitions">5 Definitions</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Exported-definitions-1" href="#Exported-definitions">5.1 Exported definitions</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Functions" href="#Exported-functions">5.1.1 Functions</a></li>
+      <li><a name="toc-Classes" href="#Exported-classes">5.1.2 Classes</a></li>
+    </ul></li>
+    <li><a name="toc-Internal-definitions-1" href="#Internal-definitions">5.2 Internal definitions</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Functions-1" href="#Internal-functions">5.2.1 Functions</a></li>
+      <li><a name="toc-Generic-functions" href="#Internal-generic-functions">5.2.2 Generic functions</a></li>
+      <li><a name="toc-Classes-1" href="#Internal-classes">5.2.3 Classes</a></li>
+    </ul></li>
+  </ul></li>
+  <li><a name="toc-Conclusion-1" href="#Conclusion">6 Conclusion</a></li>
+  <li><a name="toc-Indexes-1" href="#Indexes">Appendix A Indexes</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Concepts" href="#Concept-index">A.1 Concepts</a></li>
+    <li><a name="toc-Functions-2" href="#Function-index">A.2 Functions</a></li>
+    <li><a name="toc-Variables" href="#Variable-index">A.3 Variables</a></li>
+    <li><a name="toc-Data-types" href="#Data-type-index">A.4 Data types</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+<a name="Top"></a>
+<div class="header">
+<p>
+Next: <a href="#Copying" accesskey="n" rel="next">Copying</a>, Previous: <a href="dir.html#Top" accesskey="p" rel="prev">(dir)</a>, Up: <a href="dir.html#Top" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="The-example-Reference-Manual"></a>
+<h1 class="top">The example Reference Manual</h1>
+<p>This is the example Reference Manual,
+generated automatically by Declt version 3.0 &quot;Montgomery Scott&quot;
+on Mon Jan 25 10:54:41 2021 GMT+0.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Copying" accesskey="1">Copying</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The MIT License
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Introduction" accesskey="2">Introduction</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">What example is all about
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Systems" accesskey="3">Systems</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The systems documentation
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Files" accesskey="4">Files</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The files documentation
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Packages" accesskey="5">Packages</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The packages documentation
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Definitions" accesskey="6">Definitions</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The symbols documentation
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Conclusion" accesskey="7">Conclusion</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Time to go
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Indexes" accesskey="8">Indexes</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Concepts, functions, variables and data types
+</td></tr>
+</table>
+
+<blockquote>
+<p>Copyright &copy; 2021 Alexander Artemenko
+</p>
+<p>Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+</p>
+<p>Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+section entitled &ldquo;Copying&rdquo; is included exactly as in the original.
+</p>
+<p>Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be translated as well.
+</p></blockquote>
+
+
+
+
+<hr>
+<a name="Copying"></a>
+<div class="header">
+<p>
+Next: <a href="#Introduction" accesskey="n" rel="next">Introduction</a>, Previous: <a href="#Top" accesskey="p" rel="prev">Top</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Copying-1"></a>
+<h2 class="unnumbered">Copying</h2>
+<blockquote>
+<p>Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+</p>
+<p>THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+</p></blockquote>
+
+
+
+<hr>
+<a name="Introduction"></a>
+<div class="header">
+<p>
+Next: <a href="#Systems" accesskey="n" rel="next">Systems</a>, Previous: <a href="#Copying" accesskey="p" rel="prev">Copying</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Introduction-1"></a>
+<h2 class="chapter">1 Introduction</h2>
+<p>This is the introduction to <a href="https://www.lrde.epita.fr/~didier/software/lisp/declt/user/index.html">Declt</a> example project.
+<tt>Declt</tt> is a documentation system used to build a <a href="https://quickref.common-lisp.net/">Quickref</a> &mdash; API reference for all
+libraries, included into the Quicklisp.
+</p>
+<p>This project is a part of the <a href="https://cl-doc-systems.github.io/">CL Doc Systems</a> &mdash;
+attempt to create a comprehensive set of examples of different Common Lisp documentation
+systems.
+</p>
+<a name="Pros-_0026-Cons"></a>
+<h3 class="section">1.1 Pros &amp; Cons</h3>
+
+<a name="Pros"></a>
+<h4 class="subsection">1.1.1 Pros</h4>
+
+<ul>
+<li> Generates manuals in Texinfo which can be converted to <tt>HTML</tt>, <tt>PDF</tt>, <tt>DVI</tt>
+and <tt>PostScript</tt>. Here is <a href="index.pdf">PDF version</a> of this site.
+</li><li> Automatically embeds license information.
+</li><li> Uses standard <a href="https://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html">Texinfo format</a>,
+which has good documentation. Theoretically, Texinfo should well suite for large documents.
+</li><li> It is able to generate single or multi page <tt>HTML</tt> output. To switch the mode, change
+<code>single-page-p</code> variable in <samp>docs/scripts/builder.lisp</samp>.
+
+</li></ul>
+
+<a name="Cons"></a>
+<h4 class="subsection">1.1.2 Cons</h4>
+
+<ul>
+<li> Works only under <tt>SBCL</tt>.
+</li><li> Free form documentation chapters are limited by &quot;Introduction&quot; and
+&quot;Conclusion&quot;.
+</li><li> Texinfo is not so popular these days. Also, it is very verbose.
+</li><li> There is no default CSS theme.
+</li><li> I wasn&rsquo;t able to use cross referencing Texinfo tags from
+docstrings. Seems Texinfo markup does not work there. But it works
+in the introduction and conclusion. Here is example link to the
+<a href="#go-to-the-EXAMPLE_002fUTILS_2236_2236DO_002dTHE_002dJOB-function"><tt>do-the-job</tt></a> function.
+</li></ul>
+
+
+
+<hr>
+<a name="Systems"></a>
+<div class="header">
+<p>
+Next: <a href="#Files" accesskey="n" rel="next">Files</a>, Previous: <a href="#Introduction" accesskey="p" rel="prev">Introduction</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Systems-1"></a>
+<h2 class="chapter">2 Systems</h2>
+<p>The main system appears first, followed by any subsystem dependency.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#The-example-system" accesskey="1">The example system</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-example_002fapp-system" accesskey="2">The example/app system</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-example_002futils-system" accesskey="3">The example/utils system</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-example_002fclass-system" accesskey="4">The example/class system</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr>
+<a name="The-example-system"></a>
+<div class="header">
+<p>
+Next: <a href="#The-example_002fapp-system" accesskey="n" rel="next">The example/app system</a>, Previous: <a href="#Systems" accesskey="p" rel="prev">Systems</a>, Up: <a href="#Systems" accesskey="u" rel="up">Systems</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="example"></a>
+<h3 class="section">2.1 <tt>example</tt></h3>
+<a name="go-to-the-example-system"></a><a name="index-example"></a>
+<a name="index-System_002c-example"></a>
+<dl compact="compact">
+<dt><strong>Author</strong></dt>
+<dd><p>Alexander Artemenko
+</p></dd>
+<dt><strong>License</strong></dt>
+<dd><p>MIT
+</p></dd>
+<dt><strong>Description</strong></dt>
+<dd><p>This description will be used only if long-description is missing
+</p></dd>
+<dt><strong>Long Description</strong></dt>
+<dd><p>Test long description. Both descriptions will be shown in the docs.
+</p></dd>
+<dt><strong>Dependency</strong></dt>
+<dd><p><a href="#go-to-the-example_002fapp-system"><tt>example/app</tt></a> (system)
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_2024asd-file"><tt>example.asd</tt></a> (file)
+</p></dd>
+<dt><strong>Directory</strong></dt>
+<dd><p><a href="file:///home/runner/work/declt/declt/"><tt>/home/runner/work/declt/declt/</tt></a>
+</p></dd>
+</dl>
+
+
+<hr>
+<a name="The-example_002fapp-system"></a>
+<div class="header">
+<p>
+Next: <a href="#The-example_002futils-system" accesskey="n" rel="next">The example/utils system</a>, Previous: <a href="#The-example-system" accesskey="p" rel="prev">The example system</a>, Up: <a href="#Systems" accesskey="u" rel="up">Systems</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="example_002fapp"></a>
+<h3 class="section">2.2 <tt>example/app</tt></h3>
+<a name="go-to-the-example_002fapp-system"></a><a name="index-example_002fapp"></a>
+<a name="index-System_002c-example_002fapp"></a>
+<dl compact="compact">
+<dt><strong>Author</strong></dt>
+<dd><p>Alexander Artemenko
+</p></dd>
+<dt><strong>License</strong></dt>
+<dd><p>MIT
+</p></dd>
+<dt><strong>Dependencies</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-example_002futils-system"><tt>example/utils</tt></a> (system)
+</li><li> <a href="#go-to-the-example_002fclass-system"><tt>example/class</tt></a> (system)
+</li></ul>
+</dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_2024asd-file"><tt>example.asd</tt></a> (file)
+</p></dd>
+<dt><strong>Directory</strong></dt>
+<dd><p><a href="file:///home/runner/work/declt/declt/"><tt>/home/runner/work/declt/declt/</tt></a>
+</p></dd>
+<dt><strong>Component</strong></dt>
+<dd><p><a href="#go-to-the-example_002fapp_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+</dl>
+
+
+<hr>
+<a name="The-example_002futils-system"></a>
+<div class="header">
+<p>
+Next: <a href="#The-example_002fclass-system" accesskey="n" rel="next">The example/class system</a>, Previous: <a href="#The-example_002fapp-system" accesskey="p" rel="prev">The example/app system</a>, Up: <a href="#Systems" accesskey="u" rel="up">Systems</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="example_002futils"></a>
+<h3 class="section">2.3 <tt>example/utils</tt></h3>
+<a name="go-to-the-example_002futils-system"></a><a name="index-example_002futils"></a>
+<a name="index-System_002c-example_002futils"></a>
+<dl compact="compact">
+<dt><strong>Author</strong></dt>
+<dd><p>Alexander Artemenko
+</p></dd>
+<dt><strong>License</strong></dt>
+<dd><p>MIT
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_2024asd-file"><tt>example.asd</tt></a> (file)
+</p></dd>
+<dt><strong>Directory</strong></dt>
+<dd><p><a href="file:///home/runner/work/declt/declt/"><tt>/home/runner/work/declt/declt/</tt></a>
+</p></dd>
+<dt><strong>Component</strong></dt>
+<dd><p><a href="#go-to-the-example_002futils_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+</dl>
+
+
+<hr>
+<a name="The-example_002fclass-system"></a>
+<div class="header">
+<p>
+Previous: <a href="#The-example_002futils-system" accesskey="p" rel="prev">The example/utils system</a>, Up: <a href="#Systems" accesskey="u" rel="up">Systems</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="example_002fclass"></a>
+<h3 class="section">2.4 <tt>example/class</tt></h3>
+<a name="go-to-the-example_002fclass-system"></a><a name="index-example_002fclass"></a>
+<a name="index-System_002c-example_002fclass"></a>
+<dl compact="compact">
+<dt><strong>Author</strong></dt>
+<dd><p>Alexander Artemenko
+</p></dd>
+<dt><strong>License</strong></dt>
+<dd><p>MIT
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_2024asd-file"><tt>example.asd</tt></a> (file)
+</p></dd>
+<dt><strong>Directory</strong></dt>
+<dd><p><a href="file:///home/runner/work/declt/declt/"><tt>/home/runner/work/declt/declt/</tt></a>
+</p></dd>
+<dt><strong>Component</strong></dt>
+<dd><p><a href="#go-to-the-example_002fclass_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+</dl>
+
+
+
+<hr>
+<a name="Files"></a>
+<div class="header">
+<p>
+Next: <a href="#Packages" accesskey="n" rel="next">Packages</a>, Previous: <a href="#Systems" accesskey="p" rel="prev">Systems</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Files-1"></a>
+<h2 class="chapter">3 Files</h2>
+<p>Files are sorted by type and then listed depth-first from the systems
+components trees.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Lisp-files" accesskey="1">Lisp files</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr>
+<a name="Lisp-files"></a>
+<div class="header">
+<p>
+Previous: <a href="#Files" accesskey="p" rel="prev">Files</a>, Up: <a href="#Files" accesskey="u" rel="up">Files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Lisp"></a>
+<h3 class="section">3.1 Lisp</h3>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#The-example_2024asd-file" accesskey="1">The example.asd file</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-example_002fapp_002ffile_002dtype_2024lisp-file" accesskey="2">The example/app/file-type.lisp file</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-example_002futils_002ffile_002dtype_2024lisp-file" accesskey="3">The example/utils/file-type.lisp file</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-example_002fclass_002ffile_002dtype_2024lisp-file" accesskey="4">The example/class/file-type.lisp file</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<a name="The-example_2024asd-file"></a>
+<div class="header">
+<p>
+Next: <a href="#The-example_002fapp_002ffile_002dtype_2024lisp-file" accesskey="n" rel="next">The example/app/file-type․lisp file</a>, Previous: <a href="#Lisp-files" accesskey="p" rel="prev">Lisp files</a>, Up: <a href="#Lisp-files" accesskey="u" rel="up">Lisp files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="example_002easd"></a>
+<h4 class="subsection">3.1.1 <tt>example.asd</tt></h4>
+<a name="go-to-the-example_2024asd-file"></a><a name="index-example_002easd"></a>
+<a name="index-Lisp-File_002c-example_002easd"></a>
+<a name="index-File_002c-Lisp_002c-example_002easd"></a>
+<dl compact="compact">
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file:///home/runner/work/declt/declt/example.asd"><tt>/home/runner/work/declt/declt/example.asd</tt></a>
+</p></dd>
+<dt><strong>Systems</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-example-system"><tt>example</tt></a> (system)
+</li><li> <a href="#go-to-the-example_002fapp-system"><tt>example/app</tt></a> (system)
+</li><li> <a href="#go-to-the-example_002futils-system"><tt>example/utils</tt></a> (system)
+</li><li> <a href="#go-to-the-example_002fclass-system"><tt>example/class</tt></a> (system)
+</li></ul>
+</dd>
+</dl>
+
+<hr>
+<a name="The-example_002fapp_002ffile_002dtype_2024lisp-file"></a>
+<div class="header">
+<p>
+Next: <a href="#The-example_002futils_002ffile_002dtype_2024lisp-file" accesskey="n" rel="next">The example/utils/file-type․lisp file</a>, Previous: <a href="#The-example_2024asd-file" accesskey="p" rel="prev">The example․asd file</a>, Up: <a href="#Lisp-files" accesskey="u" rel="up">Lisp files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="example_002fapp_002ffile_002dtype_002elisp"></a>
+<h4 class="subsection">3.1.2 <tt>example/app/file-type.lisp</tt></h4>
+<a name="go-to-the-example_002fapp_002ffile_002dtype_2024lisp-file"></a><a name="index-example_002fapp_002ffile_002dtype_002elisp"></a>
+<a name="index-Lisp-File_002c-example_002fapp_002ffile_002dtype_002elisp"></a>
+<a name="index-File_002c-Lisp_002c-example_002fapp_002ffile_002dtype_002elisp"></a>
+<dl compact="compact">
+<dt><strong>Parent</strong></dt>
+<dd><p><a href="#go-to-the-example_002fapp-system"><tt>example/app</tt></a> (system)
+</p></dd>
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file:///home/runner/work/declt/declt/src/app.lisp"><tt>app.lisp</tt></a>
+</p></dd>
+<dt><strong>Packages</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fAPP-package"><tt>example/app</tt></a>
+</p></dd>
+<dt><strong>Exported Definitions</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fAPP_2236_2236FOO-function"><tt>foo</tt></a> (function)
+</p></dd>
+</dl>
+
+<hr>
+<a name="The-example_002futils_002ffile_002dtype_2024lisp-file"></a>
+<div class="header">
+<p>
+Next: <a href="#The-example_002fclass_002ffile_002dtype_2024lisp-file" accesskey="n" rel="next">The example/class/file-type․lisp file</a>, Previous: <a href="#The-example_002fapp_002ffile_002dtype_2024lisp-file" accesskey="p" rel="prev">The example/app/file-type․lisp file</a>, Up: <a href="#Lisp-files" accesskey="u" rel="up">Lisp files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="example_002futils_002ffile_002dtype_002elisp"></a>
+<h4 class="subsection">3.1.3 <tt>example/utils/file-type.lisp</tt></h4>
+<a name="go-to-the-example_002futils_002ffile_002dtype_2024lisp-file"></a><a name="index-example_002futils_002ffile_002dtype_002elisp"></a>
+<a name="index-Lisp-File_002c-example_002futils_002ffile_002dtype_002elisp"></a>
+<a name="index-File_002c-Lisp_002c-example_002futils_002ffile_002dtype_002elisp"></a>
+<dl compact="compact">
+<dt><strong>Parent</strong></dt>
+<dd><p><a href="#go-to-the-example_002futils-system"><tt>example/utils</tt></a> (system)
+</p></dd>
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file:///home/runner/work/declt/declt/src/utils.lisp"><tt>utils.lisp</tt></a>
+</p></dd>
+<dt><strong>Packages</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fUTILS-package"><tt>example/utils</tt></a>
+</p></dd>
+<dt><strong>Exported Definitions</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fUTILS_2236_2236DO_002dTHE_002dJOB-function"><tt>do-the-job</tt></a> (function)
+</p></dd>
+<dt><strong>Internal Definitions</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fUTILS_2236_2236CONCAT-function"><tt>concat</tt></a> (function)
+</p></dd>
+</dl>
+
+<hr>
+<a name="The-example_002fclass_002ffile_002dtype_2024lisp-file"></a>
+<div class="header">
+<p>
+Previous: <a href="#The-example_002futils_002ffile_002dtype_2024lisp-file" accesskey="p" rel="prev">The example/utils/file-type․lisp file</a>, Up: <a href="#Lisp-files" accesskey="u" rel="up">Lisp files</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="example_002fclass_002ffile_002dtype_002elisp"></a>
+<h4 class="subsection">3.1.4 <tt>example/class/file-type.lisp</tt></h4>
+<a name="go-to-the-example_002fclass_002ffile_002dtype_2024lisp-file"></a><a name="index-example_002fclass_002ffile_002dtype_002elisp"></a>
+<a name="index-Lisp-File_002c-example_002fclass_002ffile_002dtype_002elisp"></a>
+<a name="index-File_002c-Lisp_002c-example_002fclass_002ffile_002dtype_002elisp"></a>
+<dl compact="compact">
+<dt><strong>Parent</strong></dt>
+<dd><p><a href="#go-to-the-example_002fclass-system"><tt>example/class</tt></a> (system)
+</p></dd>
+<dt><strong>Location</strong></dt>
+<dd><p><a href="file:///home/runner/work/declt/declt/src/class.lisp"><tt>class.lisp</tt></a>
+</p></dd>
+<dt><strong>Packages</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS-package"><tt>example/class</tt></a>
+</p></dd>
+<dt><strong>Exported Definitions</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236ADMIN-class"><tt>admin</tt></a> (class)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236NON_002dDOCUMENTED_002dUSER-class"><tt>non-documented-user</tt></a> (class)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236USER-class"><tt>user</tt></a> (class)
+</li></ul>
+</dd>
+<dt><strong>Internal Definitions</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236EMAIL-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>email</tt></a> (method)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236INNER_002dDOCUMENTED_002dUSER-class"><tt>inner-documented-user</tt></a> (class)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236IS_002dADMIN-generic-function"><tt>is-admin</tt></a> (generic function)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236IS_002dADMIN-EXAMPLE_002fCLASS_2236_2236ADMIN-method"><tt>is-admin</tt></a> (method)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236IS_002dADMIN-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>is-admin</tt></a> (method)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236LAST_002dLOGIN_002dAT-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>last-login-at</tt></a> (method)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236_2768SETF-LAST_002dLOGIN_002dAT_2769-COMMON_002dLISP_2236_2236T-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>(setf last-login-at)</tt></a> (method)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236NAME-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>name</tt></a> (method)
+</li></ul>
+</dd>
+</dl>
+
+
+
+<hr>
+<a name="Packages"></a>
+<div class="header">
+<p>
+Next: <a href="#Definitions" accesskey="n" rel="next">Definitions</a>, Previous: <a href="#Files" accesskey="p" rel="prev">Files</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Packages-1"></a>
+<h2 class="chapter">4 Packages</h2>
+<p>Packages are listed by definition order.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#The-example_002fapp-package" accesskey="1">The example/app package</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-example_002futils-package" accesskey="2">The example/utils package</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#The-example_002fclass-package" accesskey="3">The example/class package</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr>
+<a name="The-example_002fapp-package"></a>
+<div class="header">
+<p>
+Next: <a href="#The-example_002futils-package" accesskey="n" rel="next">The example/utils package</a>, Previous: <a href="#Packages" accesskey="p" rel="prev">Packages</a>, Up: <a href="#Packages" accesskey="u" rel="up">Packages</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="example_002fapp-1"></a>
+<h3 class="section">4.1 <tt>example/app</tt></h3>
+<a name="go-to-the-EXAMPLE_002fAPP-package"></a><a name="index-example_002fapp-1"></a>
+<a name="index-Package_002c-example_002fapp"></a>
+<p>This is docstring for the EXAMPLE/APP package.<br>
+</p>
+<p>The package contains a FOO function which does it&rsquo;s job by
+                   applying transformation to the first and second arguments.
+</p><dl compact="compact">
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002fapp_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+<dt><strong>Use List</strong></dt>
+<dd><p><tt>common-lisp</tt>
+</p></dd>
+<dt><strong>Exported Definitions</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fAPP_2236_2236FOO-function"><tt>foo</tt></a> (function)
+</p></dd>
+</dl>
+
+
+<hr>
+<a name="The-example_002futils-package"></a>
+<div class="header">
+<p>
+Next: <a href="#The-example_002fclass-package" accesskey="n" rel="next">The example/class package</a>, Previous: <a href="#The-example_002fapp-package" accesskey="p" rel="prev">The example/app package</a>, Up: <a href="#Packages" accesskey="u" rel="up">Packages</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="example_002futils-1"></a>
+<h3 class="section">4.2 <tt>example/utils</tt></h3>
+<a name="go-to-the-EXAMPLE_002fUTILS-package"></a><a name="index-example_002futils-1"></a>
+<a name="index-Package_002c-example_002futils"></a>
+<p>The utils package.<br>
+</p>
+<p>The only exported function DO-THE-JOB will be show in a separate
+section &quot;Exported Definitions&quot;.
+</p><dl compact="compact">
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002futils_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+<dt><strong>Use List</strong></dt>
+<dd><p><tt>common-lisp</tt>
+</p></dd>
+<dt><strong>Exported Definitions</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fUTILS_2236_2236DO_002dTHE_002dJOB-function"><tt>do-the-job</tt></a> (function)
+</p></dd>
+<dt><strong>Internal Definitions</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fUTILS_2236_2236CONCAT-function"><tt>concat</tt></a> (function)
+</p></dd>
+</dl>
+
+
+<hr>
+<a name="The-example_002fclass-package"></a>
+<div class="header">
+<p>
+Previous: <a href="#The-example_002futils-package" accesskey="p" rel="prev">The example/utils package</a>, Up: <a href="#Packages" accesskey="u" rel="up">Packages</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="example_002fclass-1"></a>
+<h3 class="section">4.3 <tt>example/class</tt></h3>
+<a name="go-to-the-EXAMPLE_002fCLASS-package"></a><a name="index-example_002fclass-1"></a>
+<a name="index-Package_002c-example_002fclass"></a>
+<p>This package demonstrates how Declt displays classes and generic functions.<br>
+</p>
+<p>The key consept is USER class<br>
+</p>
+<p>It is possible to check if user has admin privileges, using this IS-ADMIN function.
+</p>
+<p>Right now, IS-ADMIN returns T only for objects of class ADMIN.
+</p><dl compact="compact">
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002fclass_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+<dt><strong>Use List</strong></dt>
+<dd><p><tt>common-lisp</tt>
+</p></dd>
+<dt><strong>Exported Definitions</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236ADMIN-class"><tt>admin</tt></a> (class)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236NON_002dDOCUMENTED_002dUSER-class"><tt>non-documented-user</tt></a> (class)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236USER-class"><tt>user</tt></a> (class)
+</li></ul>
+</dd>
+<dt><strong>Internal Definitions</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236EMAIL-generic-function"><tt>email</tt></a> (generic function)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236EMAIL-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>email</tt></a> (method)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236INNER_002dDOCUMENTED_002dUSER-class"><tt>inner-documented-user</tt></a> (class)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236IS_002dADMIN-generic-function"><tt>is-admin</tt></a> (generic function)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236IS_002dADMIN-EXAMPLE_002fCLASS_2236_2236ADMIN-method"><tt>is-admin</tt></a> (method)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236IS_002dADMIN-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>is-admin</tt></a> (method)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236LAST_002dLOGIN_002dAT-generic-function"><tt>last-login-at</tt></a> (generic function)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236LAST_002dLOGIN_002dAT-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>last-login-at</tt></a> (method)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236_2768SETF-LAST_002dLOGIN_002dAT_2769-COMMON_002dLISP_2236_2236T-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>(setf last-login-at)</tt></a> (method)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236_2768SETF-LAST_002dLOGIN_002dAT_2769-generic-function"><tt>(setf last-login-at)</tt></a> (generic function)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236NAME-generic-function"><tt>name</tt></a> (generic function)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236NAME-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>name</tt></a> (method)
+</li></ul>
+</dd>
+</dl>
+
+
+
+<hr>
+<a name="Definitions"></a>
+<div class="header">
+<p>
+Next: <a href="#Conclusion" accesskey="n" rel="next">Conclusion</a>, Previous: <a href="#Packages" accesskey="p" rel="prev">Packages</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Definitions-1"></a>
+<h2 class="chapter">5 Definitions</h2>
+<p>Definitions are sorted by export status, category, package, and then by
+lexicographic order.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Exported-definitions" accesskey="1">Exported definitions</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Internal-definitions" accesskey="2">Internal definitions</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr>
+<a name="Exported-definitions"></a>
+<div class="header">
+<p>
+Next: <a href="#Internal-definitions" accesskey="n" rel="next">Internal definitions</a>, Previous: <a href="#Definitions" accesskey="p" rel="prev">Definitions</a>, Up: <a href="#Definitions" accesskey="u" rel="up">Definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Exported-definitions-1"></a>
+<h3 class="section">5.1 Exported definitions</h3>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Exported-functions" accesskey="1">Exported functions</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Exported-classes" accesskey="2">Exported classes</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<a name="Exported-functions"></a>
+<div class="header">
+<p>
+Next: <a href="#Exported-classes" accesskey="n" rel="next">Exported classes</a>, Previous: <a href="#Exported-definitions" accesskey="p" rel="prev">Exported definitions</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Functions"></a>
+<h4 class="subsection">5.1.1 Functions</h4>
+<dl>
+<dt><a name="index-do_002dthe_002djob"></a>Function: <strong>do-the-job</strong> <em>FIRST SECOND</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fUTILS_2236_2236DO_002dTHE_002dJOB-function"></a><a name="index-Function_002c-do_002dthe_002djob"></a>
+<p>The function does the job.<br>
+</p>
+<p>It CONCATENATES first and second arguments<br>
+calling internal function concat.<br>
+</p>
+<p>On this multiline we&rsquo;ll check how does documentation
+system processes docstrings.<br>
+</p>
+<p>NOTE: pay attention the Texinfo markup in the second paragraph
+does not supported in docstrings and I was not able to make
+CONCATENATES word bold :(
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fUTILS-package"><tt>example/utils</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002futils_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt><a name="index-foo"></a>Function: <strong>foo</strong> <em>FIRST &amp;key OTHER</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fAPP_2236_2236FOO-function"></a><a name="index-Function_002c-foo"></a>
+<p>This is example function.<br>
+</p>
+<p>* FIRST - Just a first argument.<br>
+   * OTHER - Optional keyword argument. Default is 100500.<br>
+</p>
+<p>Returns: A string with first and other concatenated.<br>
+</p>
+<p>Internally it calls EXAMPLE/UTILS:DO-THE-JOB<br>
+   to do the real job.<br>
+</p>
+<p>Note, that the link above is broken, but Coo does not warn us when building the docs.
+   Sphinx issues a warning inn such case.
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fAPP-package"><tt>example/app</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002fapp_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+
+<hr>
+<a name="Exported-classes"></a>
+<div class="header">
+<p>
+Previous: <a href="#Exported-functions" accesskey="p" rel="prev">Exported functions</a>, Up: <a href="#Exported-definitions" accesskey="u" rel="up">Exported definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Classes"></a>
+<h4 class="subsection">5.1.2 Classes</h4>
+<dl>
+<dt><a name="index-admin"></a>Class: <strong>admin</strong> <em>()</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236ADMIN-class"></a><a name="index-Class_002c-admin"></a>
+<p>Admins should have additional priveleges.
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS-package"><tt>example/class</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002fclass_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+<dt><strong>Direct superclasses</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236USER-class"><tt>user</tt></a> (class)
+</p></dd>
+<dt><strong>Direct methods</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236IS_002dADMIN-EXAMPLE_002fCLASS_2236_2236ADMIN-method"><tt>is-admin</tt></a> (method)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt><a name="index-non_002ddocumented_002duser"></a>Class: <strong>non-documented-user</strong> <em>()</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236NON_002dDOCUMENTED_002dUSER-class"></a><a name="index-Class_002c-non_002ddocumented_002duser"></a>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS-package"><tt>example/class</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002fclass_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+<dt><strong>Direct superclasses</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236USER-class"><tt>user</tt></a> (class)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt><a name="index-user"></a>Class: <strong>user</strong> <em>()</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236USER-class"></a><a name="index-Class_002c-user"></a>
+<p>All users in the system have this class.
+</p>
+<p>Last login slot is updated automatically.
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS-package"><tt>example/class</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002fclass_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+<dt><strong>Direct superclasses</strong></dt>
+<dd><p><tt>standard-object</tt> (class)
+</p></dd>
+<dt><strong>Direct subclasses</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236ADMIN-class"><tt>admin</tt></a> (class)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236NON_002dDOCUMENTED_002dUSER-class"><tt>non-documented-user</tt></a> (class)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236INNER_002dDOCUMENTED_002dUSER-class"><tt>inner-documented-user</tt></a> (class)
+</li></ul>
+</dd>
+<dt><strong>Direct methods</strong></dt>
+<dd><ul>
+<li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236IS_002dADMIN-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>is-admin</tt></a> (method)
+</li><li> <tt>last-login-at</tt> (method)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236LAST_002dLOGIN_002dAT-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>last-login-at</tt></a> (method)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236EMAIL-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>email</tt></a> (method)
+</li><li> <a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236NAME-EXAMPLE_002fCLASS_2236_2236USER-method"><tt>name</tt></a> (method)
+</li></ul>
+</dd>
+<dt><strong>Direct slots</strong></dt>
+<dd><dl>
+<dt><a name="index-name-2"></a>Slot: <strong>name</strong></dt>
+<dd><a name="index-Slot_002c-name"></a>
+<p>A full username.
+</p><dl compact="compact">
+<dt><strong>Type</strong></dt>
+<dd><p><tt>string</tt>
+</p></dd>
+<dt><strong>Initargs</strong></dt>
+<dd><p><tt>:name</tt>
+</p></dd>
+<dt><strong>Readers</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236NAME-generic-function"><tt>name</tt></a> (generic function)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt><a name="index-email-2"></a>Slot: <strong>email</strong></dt>
+<dd><a name="index-Slot_002c-email"></a>
+<p>Correct email address.
+</p><dl compact="compact">
+<dt><strong>Type</strong></dt>
+<dd><p><tt>string</tt>
+</p></dd>
+<dt><strong>Initargs</strong></dt>
+<dd><p><tt>:email</tt>
+</p></dd>
+<dt><strong>Readers</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236EMAIL-generic-function"><tt>email</tt></a> (generic function)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt><a name="index-last_002dlogin_002dat-2"></a>Slot: <strong>last-login-at</strong></dt>
+<dd><a name="index-Slot_002c-last_002dlogin_002dat"></a>
+<dl compact="compact">
+<dt><strong>Readers</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236LAST_002dLOGIN_002dAT-generic-function"><tt>last-login-at</tt></a> (generic function)
+</p></dd>
+<dt><strong>Writers</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236_2768SETF-LAST_002dLOGIN_002dAT_2769-generic-function"><tt>(setf last-login-at)</tt></a> (generic function)
+</p></dd>
+</dl>
+</dd></dl>
+</dd>
+</dl>
+</dd></dl>
+
+
+<hr>
+<a name="Internal-definitions"></a>
+<div class="header">
+<p>
+Previous: <a href="#Exported-definitions" accesskey="p" rel="prev">Exported definitions</a>, Up: <a href="#Definitions" accesskey="u" rel="up">Definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Internal-definitions-1"></a>
+<h3 class="section">5.2 Internal definitions</h3>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Internal-functions" accesskey="1">Internal functions</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Internal-generic-functions" accesskey="2">Internal generic functions</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Internal-classes" accesskey="3">Internal classes</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<a name="Internal-functions"></a>
+<div class="header">
+<p>
+Next: <a href="#Internal-generic-functions" accesskey="n" rel="next">Internal generic functions</a>, Previous: <a href="#Internal-definitions" accesskey="p" rel="prev">Internal definitions</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Functions-1"></a>
+<h4 class="subsection">5.2.1 Functions</h4>
+<dl>
+<dt><a name="index-concat"></a>Function: <strong>concat</strong> <em>FIRST SECOND</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fUTILS_2236_2236CONCAT-function"></a><a name="index-Function_002c-concat"></a>
+<p>This function is not exported and should not be showed in the API reference.
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fUTILS-package"><tt>example/utils</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002futils_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+
+<hr>
+<a name="Internal-generic-functions"></a>
+<div class="header">
+<p>
+Next: <a href="#Internal-classes" accesskey="n" rel="next">Internal classes</a>, Previous: <a href="#Internal-functions" accesskey="p" rel="prev">Internal functions</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Generic-functions"></a>
+<h4 class="subsection">5.2.2 Generic functions</h4>
+<dl>
+<dt><a name="index-email"></a>Generic Function: <strong>email</strong> <em>OBJECT</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236EMAIL-generic-function"></a><a name="index-Generic-Function_002c-email"></a>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS-package"><tt>example/class</tt></a>
+</p></dd>
+<dt><strong>Methods</strong></dt>
+<dd><dl>
+<dt><a name="index-email-1"></a>Method: <strong>email</strong> <em>(USER <tt>user</tt>)</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236EMAIL-EXAMPLE_002fCLASS_2236_2236USER-method"></a><a name="index-Method_002c-email"></a>
+<p>Correct email address.
+</p><dl compact="compact">
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002fclass_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+</dd>
+</dl>
+</dd></dl>
+<dl>
+<dt><a name="index-is_002dadmin"></a>Generic Function: <strong>is-admin</strong> <em>USER</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236IS_002dADMIN-generic-function"></a><a name="index-Generic-Function_002c-is_002dadmin"></a>
+<p>Returns t if user can modify the system.
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS-package"><tt>example/class</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002fclass_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+<dt><strong>Methods</strong></dt>
+<dd><dl>
+<dt><a name="index-is_002dadmin-1"></a>Method: <strong>is-admin</strong> <em>(USER <tt>admin</tt>)</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236IS_002dADMIN-EXAMPLE_002fCLASS_2236_2236ADMIN-method"></a><a name="index-Method_002c-is_002dadmin"></a>
+</dd></dl>
+<dl>
+<dt><a name="index-is_002dadmin-2"></a>Method: <strong>is-admin</strong> <em>(USER <tt>user</tt>)</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236IS_002dADMIN-EXAMPLE_002fCLASS_2236_2236USER-method"></a><a name="index-Method_002c-is_002dadmin-1"></a>
+</dd></dl>
+</dd>
+</dl>
+</dd></dl>
+<dl>
+<dt><a name="index-last_002dlogin_002dat"></a>Generic Function: <strong>last-login-at</strong> <em>OBJECT</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236LAST_002dLOGIN_002dAT-generic-function"></a><a name="index-Generic-Function_002c-last_002dlogin_002dat"></a>
+</dd><dt><a name="index-_0028setf-last_002dlogin_002dat_0029"></a>Generic Function: <strong>(setf last-login-at)</strong> <em>NEW-VALUE OBJECT</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236_2768SETF-LAST_002dLOGIN_002dAT_2769-generic-function"></a><a name="index-Generic-Function_002c-_0028setf-last_002dlogin_002dat_0029"></a>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS-package"><tt>example/class</tt></a>
+</p></dd>
+<dt><strong>Methods</strong></dt>
+<dd><dl>
+<dt><a name="index-last_002dlogin_002dat-1"></a>Method: <strong>last-login-at</strong> <em>(USER <tt>user</tt>)</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236LAST_002dLOGIN_002dAT-EXAMPLE_002fCLASS_2236_2236USER-method"></a><a name="index-Method_002c-last_002dlogin_002dat"></a>
+<p>automatically generated reader method
+</p><dl compact="compact">
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002fclass_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+<dl>
+<dt><a name="index-_0028setf-last_002dlogin_002dat_0029-1"></a>Method: <strong>(setf last-login-at)</strong> <em>NEW-VALUE (USER <tt>user</tt>)</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236_2768SETF-LAST_002dLOGIN_002dAT_2769-COMMON_002dLISP_2236_2236T-EXAMPLE_002fCLASS_2236_2236USER-method"></a><a name="index-Method_002c-_0028setf-last_002dlogin_002dat_0029"></a>
+<p>automatically generated writer method
+</p><dl compact="compact">
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002fclass_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+</dd>
+</dl>
+</dd></dl>
+<dl>
+<dt><a name="index-name"></a>Generic Function: <strong>name</strong> <em>OBJECT</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236NAME-generic-function"></a><a name="index-Generic-Function_002c-name"></a>
+<dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS-package"><tt>example/class</tt></a>
+</p></dd>
+<dt><strong>Methods</strong></dt>
+<dd><dl>
+<dt><a name="index-name-1"></a>Method: <strong>name</strong> <em>(USER <tt>user</tt>)</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236NAME-EXAMPLE_002fCLASS_2236_2236USER-method"></a><a name="index-Method_002c-name"></a>
+<p>A full username.
+</p><dl compact="compact">
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002fclass_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+</dl>
+</dd></dl>
+</dd>
+</dl>
+</dd></dl>
+
+<hr>
+<a name="Internal-classes"></a>
+<div class="header">
+<p>
+Previous: <a href="#Internal-generic-functions" accesskey="p" rel="prev">Internal generic functions</a>, Up: <a href="#Internal-definitions" accesskey="u" rel="up">Internal definitions</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Classes-1"></a>
+<h4 class="subsection">5.2.3 Classes</h4>
+<dl>
+<dt><a name="index-inner_002ddocumented_002duser"></a>Class: <strong>inner-documented-user</strong> <em>()</em></dt>
+<dd><a name="go-to-the-EXAMPLE_002fCLASS_2236_2236INNER_002dDOCUMENTED_002dUSER-class"></a><a name="index-Class_002c-inner_002ddocumented_002duser"></a>
+<p>This class only to demostrate how Declt&rsquo;s separates exported
+symbols from internal.<br>
+</p>
+<p>It will not be shown in the separate section &quot;Internal Definitions&quot;.
+</p><dl compact="compact">
+<dt><strong>Package</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS-package"><tt>example/class</tt></a>
+</p></dd>
+<dt><strong>Source</strong></dt>
+<dd><p><a href="#go-to-the-example_002fclass_002ffile_002dtype_2024lisp-file"><tt>file-type.lisp</tt></a> (file)
+</p></dd>
+<dt><strong>Direct superclasses</strong></dt>
+<dd><p><a href="#go-to-the-EXAMPLE_002fCLASS_2236_2236USER-class"><tt>user</tt></a> (class)
+</p></dd>
+</dl>
+</dd></dl>
+
+
+
+<hr>
+<a name="Conclusion"></a>
+<div class="header">
+<p>
+Next: <a href="#Indexes" accesskey="n" rel="next">Indexes</a>, Previous: <a href="#Definitions" accesskey="p" rel="prev">Definitions</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Conclusion-1"></a>
+<h2 class="chapter">6 Conclusion</h2>
+<p><tt>Declt</tt> can be used be used when you need to generate API reference for third-party libraries
+as <a href="https://quickref.common-lisp.net/">Quickref</a> does for all Quicklisp libraries.
+</p>
+<p>Ability to generate docs in different formats also might be interesting.
+</p>
+<p>But the lack of markup support for docstrings and cross-reference helpers along with limited ability
+to create free form documentation chapters makes <tt>Declt</tt> useless for documenting
+<a href="https://40ants.com">40Ants projects</a>.
+</p>
+
+
+<hr>
+<a name="Indexes"></a>
+<div class="header">
+<p>
+Previous: <a href="#Conclusion" accesskey="p" rel="prev">Conclusion</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Indexes-1"></a>
+<h2 class="appendix">Appendix A Indexes</h2>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Concept-index" accesskey="1">Concept index</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Function-index" accesskey="2">Function index</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Variable-index" accesskey="3">Variable index</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Data-type-index" accesskey="4">Data type index</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr>
+<a name="Concept-index"></a>
+<div class="header">
+<p>
+Next: <a href="#Function-index" accesskey="n" rel="next">Function index</a>, Previous: <a href="#Indexes" accesskey="p" rel="prev">Indexes</a>, Up: <a href="#Indexes" accesskey="u" rel="up">Indexes</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Concepts"></a>
+<h3 class="appendixsec">A.1 Concepts</h3>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-index_cp_letter-E"><b>E</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Concept-index_cp_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Concept-index_cp_letter-L"><b>L</b></a>
+ &nbsp; 
+</td></tr></table>
+<table class="index-cp" border="0">
+<tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Concept-index_cp_letter-E">E</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-example_002easd"><tt>example.asd</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_2024asd-file">The example․asd file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-example_002fapp_002ffile_002dtype_002elisp"><tt>example/app/file-type.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fapp_002ffile_002dtype_2024lisp-file">The example/app/file-type․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-example_002fclass_002ffile_002dtype_002elisp"><tt>example/class/file-type.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fclass_002ffile_002dtype_2024lisp-file">The example/class/file-type․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-example_002futils_002ffile_002dtype_002elisp"><tt>example/utils/file-type.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002futils_002ffile_002dtype_2024lisp-file">The example/utils/file-type․lisp file</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Concept-index_cp_letter-F">F</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-example_002easd">File, Lisp, <tt>example.asd</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_2024asd-file">The example․asd file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-example_002fapp_002ffile_002dtype_002elisp">File, Lisp, <tt>example/app/file-type.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fapp_002ffile_002dtype_2024lisp-file">The example/app/file-type․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-example_002fclass_002ffile_002dtype_002elisp">File, Lisp, <tt>example/class/file-type.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fclass_002ffile_002dtype_2024lisp-file">The example/class/file-type․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-File_002c-Lisp_002c-example_002futils_002ffile_002dtype_002elisp">File, Lisp, <tt>example/utils/file-type.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002futils_002ffile_002dtype_2024lisp-file">The example/utils/file-type․lisp file</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Concept-index_cp_letter-L">L</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-example_002easd">Lisp File, <tt>example.asd</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_2024asd-file">The example․asd file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-example_002fapp_002ffile_002dtype_002elisp">Lisp File, <tt>example/app/file-type.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fapp_002ffile_002dtype_2024lisp-file">The example/app/file-type․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-example_002fclass_002ffile_002dtype_002elisp">Lisp File, <tt>example/class/file-type.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fclass_002ffile_002dtype_2024lisp-file">The example/class/file-type․lisp file</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Lisp-File_002c-example_002futils_002ffile_002dtype_002elisp">Lisp File, <tt>example/utils/file-type.lisp</tt></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002futils_002ffile_002dtype_2024lisp-file">The example/utils/file-type․lisp file</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+</table>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-index_cp_letter-E"><b>E</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Concept-index_cp_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Concept-index_cp_letter-L"><b>L</b></a>
+ &nbsp; 
+</td></tr></table>
+
+
+
+<hr>
+<a name="Function-index"></a>
+<div class="header">
+<p>
+Next: <a href="#Variable-index" accesskey="n" rel="next">Variable index</a>, Previous: <a href="#Concept-index" accesskey="p" rel="prev">Concept index</a>, Up: <a href="#Indexes" accesskey="u" rel="up">Indexes</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Functions-2"></a>
+<h3 class="appendixsec">A.2 Functions</h3>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-index_fn_symbol-1"><b>(</b></a>
+ &nbsp; 
+<br>
+<a class="summary-letter" href="#Function-index_fn_letter-C"><b>C</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-D"><b>D</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-E"><b>E</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-G"><b>G</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-I"><b>I</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-L"><b>L</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-M"><b>M</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-N"><b>N</b></a>
+ &nbsp; 
+</td></tr></table>
+<table class="index-fn" border="0">
+<tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Function-index_fn_symbol-1">(</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_0028setf-last_002dlogin_002dat_0029"><code>(setf last-login-at)</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_0028setf-last_002dlogin_002dat_0029-1"><code>(setf last-login-at)</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Function-index_fn_letter-C">C</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-concat"><code>concat</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-functions">Internal functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Function-index_fn_letter-D">D</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-do_002dthe_002djob"><code>do-the-job</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Function-index_fn_letter-E">E</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-email"><code>email</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-email-1"><code>email</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Function-index_fn_letter-F">F</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-foo"><code>foo</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Function_002c-concat"><code><span class="roman">Function, </span>concat</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-functions">Internal functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Function_002c-do_002dthe_002djob"><code><span class="roman">Function, </span>do-the-job</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Function_002c-foo"><code><span class="roman">Function, </span>foo</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-functions">Exported functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Function-index_fn_letter-G">G</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Generic-Function_002c-_0028setf-last_002dlogin_002dat_0029"><code><span class="roman">Generic Function, </span>(setf last-login-at)</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Generic-Function_002c-email"><code><span class="roman">Generic Function, </span>email</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Generic-Function_002c-is_002dadmin"><code><span class="roman">Generic Function, </span>is-admin</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Generic-Function_002c-last_002dlogin_002dat"><code><span class="roman">Generic Function, </span>last-login-at</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Generic-Function_002c-name"><code><span class="roman">Generic Function, </span>name</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Function-index_fn_letter-I">I</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-is_002dadmin"><code>is-admin</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-is_002dadmin-1"><code>is-admin</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-is_002dadmin-2"><code>is-admin</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Function-index_fn_letter-L">L</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-last_002dlogin_002dat"><code>last-login-at</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-last_002dlogin_002dat-1"><code>last-login-at</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Function-index_fn_letter-M">M</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Method_002c-_0028setf-last_002dlogin_002dat_0029"><code><span class="roman">Method, </span>(setf last-login-at)</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Method_002c-email"><code><span class="roman">Method, </span>email</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Method_002c-is_002dadmin"><code><span class="roman">Method, </span>is-admin</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Method_002c-is_002dadmin-1"><code><span class="roman">Method, </span>is-admin</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Method_002c-last_002dlogin_002dat"><code><span class="roman">Method, </span>last-login-at</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Method_002c-name"><code><span class="roman">Method, </span>name</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Function-index_fn_letter-N">N</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-name"><code>name</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-name-1"><code>name</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-generic-functions">Internal generic functions</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+</table>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-index_fn_symbol-1"><b>(</b></a>
+ &nbsp; 
+<br>
+<a class="summary-letter" href="#Function-index_fn_letter-C"><b>C</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-D"><b>D</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-E"><b>E</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-F"><b>F</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-G"><b>G</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-I"><b>I</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-L"><b>L</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-M"><b>M</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Function-index_fn_letter-N"><b>N</b></a>
+ &nbsp; 
+</td></tr></table>
+
+
+
+<hr>
+<a name="Variable-index"></a>
+<div class="header">
+<p>
+Next: <a href="#Data-type-index" accesskey="n" rel="next">Data type index</a>, Previous: <a href="#Function-index" accesskey="p" rel="prev">Function index</a>, Up: <a href="#Indexes" accesskey="u" rel="up">Indexes</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Variables"></a>
+<h3 class="appendixsec">A.3 Variables</h3>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Variable-index_vr_letter-E"><b>E</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Variable-index_vr_letter-L"><b>L</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Variable-index_vr_letter-N"><b>N</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Variable-index_vr_letter-S"><b>S</b></a>
+ &nbsp; 
+</td></tr></table>
+<table class="index-vr" border="0">
+<tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Variable-index_vr_letter-E">E</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-email-2"><code>email</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-classes">Exported classes</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Variable-index_vr_letter-L">L</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-last_002dlogin_002dat-2"><code>last-login-at</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-classes">Exported classes</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Variable-index_vr_letter-N">N</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-name-2"><code>name</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-classes">Exported classes</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Variable-index_vr_letter-S">S</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Slot_002c-email"><code><span class="roman">Slot, </span>email</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-classes">Exported classes</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Slot_002c-last_002dlogin_002dat"><code><span class="roman">Slot, </span>last-login-at</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-classes">Exported classes</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Slot_002c-name"><code><span class="roman">Slot, </span>name</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-classes">Exported classes</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+</table>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Variable-index_vr_letter-E"><b>E</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Variable-index_vr_letter-L"><b>L</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Variable-index_vr_letter-N"><b>N</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Variable-index_vr_letter-S"><b>S</b></a>
+ &nbsp; 
+</td></tr></table>
+
+
+
+<hr>
+<a name="Data-type-index"></a>
+<div class="header">
+<p>
+Previous: <a href="#Variable-index" accesskey="p" rel="prev">Variable index</a>, Up: <a href="#Indexes" accesskey="u" rel="up">Indexes</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Data-types"></a>
+<h3 class="appendixsec">A.4 Data types</h3>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Data-type-index_tp_letter-A"><b>A</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-C"><b>C</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-E"><b>E</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-I"><b>I</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-N"><b>N</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-P"><b>P</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-S"><b>S</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-U"><b>U</b></a>
+ &nbsp; 
+</td></tr></table>
+<table class="index-tp" border="0">
+<tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Data-type-index_tp_letter-A">A</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-admin"><code>admin</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-classes">Exported classes</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Data-type-index_tp_letter-C">C</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Class_002c-admin"><code><span class="roman">Class, </span>admin</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-classes">Exported classes</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Class_002c-inner_002ddocumented_002duser"><code><span class="roman">Class, </span>inner-documented-user</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-classes">Internal classes</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Class_002c-non_002ddocumented_002duser"><code><span class="roman">Class, </span>non-documented-user</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-classes">Exported classes</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Class_002c-user"><code><span class="roman">Class, </span>user</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-classes">Exported classes</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Data-type-index_tp_letter-E">E</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-example"><code>example</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example-system">The example system</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-example_002fapp"><code>example/app</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fapp-system">The example/app system</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-example_002fapp-1"><code>example/app</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fapp-package">The example/app package</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-example_002fclass"><code>example/class</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fclass-system">The example/class system</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-example_002fclass-1"><code>example/class</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fclass-package">The example/class package</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-example_002futils"><code>example/utils</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002futils-system">The example/utils system</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-example_002futils-1"><code>example/utils</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002futils-package">The example/utils package</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Data-type-index_tp_letter-I">I</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-inner_002ddocumented_002duser"><code>inner-documented-user</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Internal-classes">Internal classes</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Data-type-index_tp_letter-N">N</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-non_002ddocumented_002duser"><code>non-documented-user</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-classes">Exported classes</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Data-type-index_tp_letter-P">P</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Package_002c-example_002fapp"><code><span class="roman">Package, </span>example/app</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fapp-package">The example/app package</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Package_002c-example_002fclass"><code><span class="roman">Package, </span>example/class</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fclass-package">The example/class package</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-Package_002c-example_002futils"><code><span class="roman">Package, </span>example/utils</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002futils-package">The example/utils package</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Data-type-index_tp_letter-S">S</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-System_002c-example"><code><span class="roman">System, </span>example</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example-system">The example system</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-System_002c-example_002fapp"><code><span class="roman">System, </span>example/app</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fapp-system">The example/app system</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-System_002c-example_002fclass"><code><span class="roman">System, </span>example/class</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002fclass-system">The example/class system</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-System_002c-example_002futils"><code><span class="roman">System, </span>example/utils</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-example_002futils-system">The example/utils system</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+<tr><th><a name="Data-type-index_tp_letter-U">U</a></th><td></td><td></td></tr>
+<tr><td></td><td valign="top"><a href="#index-user"><code>user</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Exported-classes">Exported classes</a></td></tr>
+<tr><td colspan="4"> <hr></td></tr>
+</table>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Data-type-index_tp_letter-A"><b>A</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-C"><b>C</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-E"><b>E</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-I"><b>I</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-N"><b>N</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-P"><b>P</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-S"><b>S</b></a>
+ &nbsp; 
+<a class="summary-letter" href="#Data-type-index_tp_letter-U"><b>U</b></a>
+ &nbsp; 
+</td></tr></table>
+
+<hr>
+
+
+
+</body>
+</html>
